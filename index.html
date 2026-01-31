@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fruits | Responsive Website Landing Page</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+	<section>
+		<div class="bg"></div>
+		<header>
+			<a href="#" class="logo">Fruits</a>
+			<ul class="navigation">
+				<li><a href="#" class="active">Home</a></li>
+				<li><a href="#">Menu</a></li>
+				<li><a href="#">What's New</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</header>
+		<div class="content">
+			<div class="textBox">
+				<h2>Drink Fresh Everyday</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+</p>
+				<a href="#">Learn More</a>
+			</div>
+			<div class="imgBox">
+				<img src="img/apple.png" class="fruits">
+			</div>
+		</div>
+		<ul class="thumb">
+			<li data-text="Apple" class="active"><img src="img/apple.png" onClick="imgSlider('img/apple.png');changeBgColor('#fc4a55')"></li>
+			<li data-text="Mango"><img src="img/mango.png" onClick="imgSlider('img/mango.png');changeBgColor('#ffcc02')"></li>
+			<li data-text="Watermelon"><img src="img/watermelon.png" onClick="imgSlider('img/watermelon.png');changeBgColor('#92ba3c')"></li>
+			<li data-text="Dragon Fruits"><img src="img/dragonFruits.png" onClick="imgSlider('img/dragonFruits.png');changeBgColor('#fb6cb2')"></li>
+			<li data-text="Pineapple"><img src="img/pineApple.png" onClick="imgSlider('img/pineApple.png');changeBgColor('#ffb42b')"></li>
+		</ul>
+		<ul class="sci">
+			<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+		</ul>
+	</section>
+	<script>
+		
+		function imgSlider(anything){
+			document.querySelector('.fruits').src = anything;
+		}
+		function changeBgColor(color){
+			const bg = document.querySelector('.bg');
+			bg.style.background = color;
+		}
+		
+		let el = document.querySelectorAll('.thumb li');
+		for (let i = 0; i < el.length; i++){
+			el[i].onclick = function(){
+				var c = 0;
+				while (c < el.length){
+					el[c++].className = 'check';
+				}
+				el[i].className = 'check active';
+			}
+		}
+	</script>
+</body>
+</html>
